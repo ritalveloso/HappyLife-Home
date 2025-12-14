@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #260701;
+}
+
+.homepage {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+/*.header h2 {*/
+/*    color: #FFF5EC;*/
+/*    margin: 0;*/
+/*    font-size: 1.2rem;*/
+/*}*/
+
+/*#george {*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    border-radius: 50%;*/
+/*}*/
+
+.carrossel {
+    position: relative;
+    max-width: 480px;
+    height: auto;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.imagens-carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.imagens {
+    min-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    scroll-snap-align: center;
+}
+
+.imagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #26070180;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+}
+
+#seta_esquerda {
+    left: 10px;
+}
+
+#seta_direita {
+    right: 10px;
+}
+
+#container-divisão {
+    width: fit-content;
+    margin: 16px auto ;
+    padding: 8px 16px;
+    background-color: #B5977F;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#titulo-divisao {
+    color: #FFF5EC;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.activities {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+}
+
+.activities h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.light-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.toggle {
+    background-color: #4caf50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.brightness {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.brightness-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+}
