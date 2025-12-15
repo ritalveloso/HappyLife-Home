@@ -6,8 +6,8 @@ let indiceAtual = 0;
 
 const tituloDivisaoElemento = document.getElementById('titulo-divisao');
 const nomesDivisoes = [
-    "Quarto",
-    "Cozinha"
+    "Bedroom",
+    "Kitchen"
 ];
 
 //atualiza a posição do carrossel
