@@ -8,35 +8,40 @@
     <link rel="stylesheet" href="geral.css">
 </head>
 <body>
-<div class="homepage">
-    <div class="header">
-        <h2>Welcome home, George</h2>
-        <img id="george" src="images/George.png" alt="George">
-    </div>
 
-    <div class="carrossel">
-        <img class="seta" id="seta_esquerda" src="images/seta_esquerda.png" alt="seta esquerda">
-        <div class="imagens-carrossel">
-            <img class="imagens" src="images/quarto.jpg" alt="quarto">
-            <img class="imagens" src="images/cozinha.jpg" alt="cozinha">
+<div class="header">
+    <h2>Welcome home, George</h2>
+    <img id="george" src="images/George.png" alt="George">
+</div>
+
+<div class="carrossel">
+    <img class="seta" id="seta_esquerda" src="images/seta_esquerda.png" alt="seta esquerda">
+    <div class="imagens-carrossel">
+        <img class="imagens" src="images/quarto.jpg" alt="quarto">
+        <img class="imagens" src="images/cozinha.jpg" alt="cozinha">
+    </div>
+    <img class="seta" id="seta_direita" src="images/seta_direita.png" alt="seta seta direita">
+</div>
+
+<div id="container-divisão">
+    <h3 id="titulo-divisao">Quarto</h3>
+</div>
+
+<div class="card">
+
+    <div class="card-content">
+        <span class="card-title">Lights</span>
+
+        <div class="info-row">
+            <img class="card-icon" src="images/lamp-icon.png" alt="lamp-icon">
+            <span class="percentage">44%</span>
         </div>
-        <img class="seta" id="seta_direita" src="images/seta_direita.png" alt="seta seta direita">
     </div>
 
-    <div id="container-divisão">
-        <h3 id="titulo-divisao">Quarto</h3>
+    <div class="slider-container">
+        <input type="range" min="0" max="100" value="44" class="full-width-slider">
     </div>
 
-    <div class="activities">
-        <h3>Activities</h3>
-        <div class="light-control">
-            <div class="toggle">Lights On</div>
-            <div class="brightness">
-                <div class="brightness-icon"></div>
-                <span>44%</span>
-            </div>
-        </div>
-    </div>
 </div>
 
 <nav class="navbar">

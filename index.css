@@ -1,27 +1,8 @@
-.homepage {
+.body {
     max-width: 480px;
     margin: 0 auto;
-    padding: 16px;
+
 }
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-}
-
-/*.header h2 {*/
-/*    color: #FFF5EC;*/
-/*    margin: 0;*/
-/*    font-size: 1.2rem;*/
-/*}*/
-
-/*#george {*/
-/*    width: 40px;*/
-/*    height: 40px;*/
-/*    border-radius: 50%;*/
-/*}*/
 
 .carrossel {
     position: relative;
@@ -89,44 +70,82 @@
     text-transform: capitalize;
 }
 
-.activities {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 80px;
+.card {
+    background-color: #563B35;
+    width: 200px; /* Ajuste a largura conforme preferir */
+    height: 220px;
+    border-radius: 28px;
+    padding: 20px;
+    color: #F5EBE0;
+
+    /* MUDANÇA PRINCIPAL: Organizar em coluna vertical */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o slider para o fundo */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-.activities h3 {
-    margin-top: 0;
-    font-size: 1rem;
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre o título "Lights" e o ícone */
 }
 
-.light-control {
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.info-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 12px;
+    gap: 10px;
 }
 
-.toggle {
-    background-color: #4caf50;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
+.card-icon {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
 }
 
-.brightness {
+.percentage {
+    font-size: 2.5rem; /* Aumentei para destaque */
+    font-weight: 400;
+}
+
+/* --- ESTILO DO SLIDER HORIZONTAL --- */
+.slider-container {
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
 }
 
-.brightness-icon {
-    width: 20px;
-    height: 20px;
-    background-color: #ffeb3b;
-    border-radius: 50%;
+/* Remove o estilo padrão feio do navegador */
+.full-width-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 50px; /* Altura grossa para parecer um botão tátil */
+    background: #462E29; /* Castanho mais escuro para o fundo (track) */
+    border-radius: 25px;
+    outline: none;
+    overflow: hidden; /* Importante para o efeito de preenchimento */
+    cursor: pointer;
+}
+
+/* O "polegar" (a bolinha que se arrasta) - Chrome/Safari */
+.full-width-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0px; /* Escondi a bolinha para parecer uma barra de progresso */
+    height: 50px;
+    box-shadow: -200px 0 0 200px #B5977F; /* O truque: sombra cria a barra cheia */
+    background: #B5977F;
+}
+
+/* O "polegar" - Firefox */
+.full-width-slider::-moz-range-thumb {
+    width: 0px;
+    height: 50px;
+    background: #B5977F;
+    border: none;
+    box-shadow: -200px 0 0 200px #B5977F;
 }

@@ -2,11 +2,17 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: #260701;
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header h2 {
     color: #FFF5EC;
-    margin: 0;
     font-size: 1.2rem;
 }
 
