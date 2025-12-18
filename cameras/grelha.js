@@ -52,7 +52,7 @@ const room = document.querySelectorAll('.card-divisao');
 
 function seeRandom() {
     let oneIsPlaying = 0;
-    let chance = Math.floor(Math.random() * 6);
+    let chance = Math.floor(Math.random() * 2);
     for (let i = 0; i < room.length; i += 2) {
         if (!room[i].classList.contains("hidden")) {
             oneIsPlaying = 1;
