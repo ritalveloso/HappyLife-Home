@@ -1,5 +1,3 @@
-
-
 .grid-divisoes {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,8 +15,20 @@
     text-decoration: none;
     display: block;
 }
-
 .card-divisao .imagens {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.card-divisao video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-divisao img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -39,6 +49,7 @@
     color: #FFF5EC;
     font-weight: bold;
     font-size: 1rem;
+    z-index: 2;
 }
 
 .seta {

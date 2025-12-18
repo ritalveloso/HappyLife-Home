@@ -1,14 +1,13 @@
-.body {
-    max-width: 480px;
-    margin: 0 auto;
-
+body {
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .carrossel {
     position: relative;
-    max-width: 480px;
+    /*max-width: 480px;*/
     height: auto;
-    margin: 20px auto;
+    /*margin: 20px auto;*/
     overflow: hidden;
 }
 
@@ -70,82 +69,169 @@
     text-transform: capitalize;
 }
 
-.card {
+/* --- O Card Horizontal --- */
+.card-horizontal {
     background-color: #563B35;
-    width: 200px; /* Ajuste a largura conforme preferir */
-    height: 220px;
-    border-radius: 28px;
-    padding: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 120px;
+    height: auto;
+    min-height: 80px;
+    border-radius: 15px; /* Cantos bem arredondados */
+    padding: 15px 25px;
+
+    display: flex;
+    align-items: center; /* Alinha tudo verticalmente ao centro */
+    justify-content: space-between; /* Separa ícone da esquerda dos controlos da direita */
+    gap: 15px;
+
     color: #F5EBE0;
-
-    /* MUDANÇA PRINCIPAL: Organizar em coluna vertical */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Empurra o slider para o fundo */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espaço entre o título "Lights" e o ícone */
-}
-
-.card-title {
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-.info-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.card-icon {
-    width: 32px;
+/* --- Ícone Grande à Esquerda --- */
+.icon-large {
+    width: 50px; /* Ícone bem grande como na imagem */
     height: auto;
     object-fit: contain;
 }
 
-.percentage {
-    font-size: 2.5rem; /* Aumentei para destaque */
-    font-weight: 400;
+/* --- Coluna da Direita (Texto + Botão) --- */
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px; /* Espaço entre a palavra "Lights" e o botão */
+
 }
 
-/* --- ESTILO DO SLIDER HORIZONTAL --- */
-.slider-container {
-    width: 100%;
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* --- O Switch Horizontal (Estilo Pílula) --- */
+.switch-small {
+    position: relative;
+    display: inline-block;
+    width: 60px;  /* Largura do botão */
+    height: 32px; /* Altura do botão */
+}
+
+/* Esconde o checkbox real */
+.switch-small input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* A calha do botão */
+.slider-round {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #8D7A76; /* Castanho acinzentado (Desligado/Fundo) */
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* A bola do botão */
+.slider-round:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #261613; /* Castanho quase preto (como na imagem) */
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* --- Estado Ligado --- */
+/* Se quiser que o fundo mude de cor quando ligado, descomente a linha abaixo */
+ input:checked + .slider-round {
+     background-color: #B5977F;
+ }
+
+/* Mover a bola quando ligado */
+input:checked + .slider-round:before {
+    transform: translateX(28px); /* Move a bola para a direita */
+}
+
+/* Classe que simula luzes desligadas */
+.luzes-off {
+    filter: grayscale(100%) brightness(40%); /* Preto e branco + escuro */
+    transition: filter 0.5s ease; /* Transição suave */
+}
+
+/* Garante que a transição funciona também quando acendes a luz */
+.imagens {
+    transition: filter 0.5s ease;
+}
+
+/* --- Barra de Cores --- */
+.barra-cores {
+    /* Mudar de Flex para Grid */
+    display: grid;
+
+    /* Cria duas colunas de tamanho igual (1fr 1fr) */
+    grid-template-columns: 1fr 1fr;
+
+    /* Espaço entre as bolinhas (vertical e horizontal) */
+    gap: 8px;
+
+    background-color: #4a322d;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.opcao-cor {
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
 
-/* Remove o estilo padrão feio do navegador */
-.full-width-slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 50px; /* Altura grossa para parecer um botão tátil */
-    background: #462E29; /* Castanho mais escuro para o fundo (track) */
-    border-radius: 25px;
-    outline: none;
-    overflow: hidden; /* Importante para o efeito de preenchimento */
-    cursor: pointer;
+/* Esconder o botão de rádio padrão feio */
+.opcao-cor input {
+    display: none;
 }
 
-/* O "polegar" (a bolinha que se arrasta) - Chrome/Safari */
-.full-width-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 0px; /* Escondi a bolinha para parecer uma barra de progresso */
-    height: 50px;
-    box-shadow: -200px 0 0 200px #B5977F; /* O truque: sombra cria a barra cheia */
-    background: #B5977F;
+/* O aspeto das bolinhas */
+.bolinha {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
 }
 
-/* O "polegar" - Firefox */
-.full-width-slider::-moz-range-thumb {
-    width: 0px;
-    height: 50px;
-    background: #B5977F;
-    border: none;
-    box-shadow: -200px 0 0 200px #B5977F;
+/* Cores das bolinhas (Visual) */
+.cor-original { background-color: #ffffff; }
+.cor-quente   { background-color: #ffaa5e; }
+.cor-frio     { background-color: #5e93ff; }
+.cor-neon     { background-color: #d05eff; }
+
+.opcao-cor input:checked + .bolinha {
+    transform: scale(1.2);
+    border-color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.filtro-quente {
+    filter: sepia(0.8) saturate(2) hue-rotate(-10deg);
+}
+
+.filtro-frio {
+    filter: sepia(0.5) hue-rotate(180deg) saturate(1.5);
+}
+
+.filtro-neon {
+    filter: sepia(0.5) hue-rotate(240deg) saturate(2);
 }

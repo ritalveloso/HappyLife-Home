@@ -1,0 +1,46 @@
+#conta-paginas {
+    font-size: 0.8em;
+    opacity: 0.6;
+    margin-top: 10px;
+}
+
+.historia {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #FFF5EC;
+    padding: 20px;
+    border-radius: 15px;
+
+    height: fit-content;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    position: relative;
+    z-index: 1;
+}
+
+#texto {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #333;
+}
+
+.setas {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-70%);
+    z-index: 9999;
+
+    margin: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.seta {
+    width: 32px;
+    height: auto;
+}
