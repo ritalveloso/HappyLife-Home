@@ -41,3 +41,32 @@
     font-size: 0.95rem;
     line-height: 1.3;
 }
+
+/* Container da notificação - Estado Inicial (Invisível) */
+.grupo-notificacao {
+    opacity: 0;
+    transform: translateY(20px); /* Começa ligeiramente mais abaixo */
+    transition: all 0.5s ease-in-out; /* Animação suave */
+
+    /* Garante que não ocupa espaço enquanto não existe,
+       mas neste caso queremos que ocupe para empurrar as outras */
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+/* Estado Visível (Quando entra) */
+.grupo-notificacao.entrar {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px; /* Altura suficiente para mostrar o conteúdo */
+    margin-bottom: 15px; /* O teu gap original */
+}
+
+/* Estado de Saída (Quando vai desaparecer) */
+.grupo-notificacao.sair {
+    opacity: 0;
+    transform: translateY(-20px); /* Sobe um pouco ao desaparecer */
+    max-height: 0;
+    margin-bottom: 0;
+}

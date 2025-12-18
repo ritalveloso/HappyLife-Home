@@ -67,3 +67,20 @@ body {
 .hidden {
     display: none;
 }
+
+.effect_Cam {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.effect_Cam img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}

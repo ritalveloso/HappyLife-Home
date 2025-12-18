@@ -23,6 +23,9 @@ divisoes.forEach(item => {
             <video autoplay muted playsinline>
                 <source src="${item.video}" type="video/mp4">
             </video>
+            <div class="effect_Cam">
+                <img src="../images/effect_Camera.png" alt="Camera Effect">
+            </div>
             <div class="titulo-divisao">
                 ${item.nome}
             </div>
@@ -31,7 +34,10 @@ divisoes.forEach(item => {
     } else {
         htmlGerado += `
         <div class="card-divisao">
-            <img src="${item.image}" alt="${item.nome}">
+            <img class="imageRoom" src="${item.image}" alt="${item.nome}">
+            <div class="effect_Cam">
+                <img src="../images/effect_Camera.png" alt="Camera Effect">
+            </div>
             <div class="titulo-divisao">
                 ${item.nome}
             </div>
@@ -46,7 +52,7 @@ const room = document.querySelectorAll('.card-divisao');
 
 function seeRandom() {
     let oneIsPlaying = 0;
-    let chance = Math.floor(Math.random() * 3);
+    let chance = Math.floor(Math.random() * );
     for (let i = 0; i < room.length; i += 2) {
         if (!room[i].classList.contains("hidden")) {
             oneIsPlaying = 1;
