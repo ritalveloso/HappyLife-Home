@@ -113,7 +113,7 @@ body {
     word-wrap: break-word;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 425px) {
     .blockPc {
         display: flex;
     }
