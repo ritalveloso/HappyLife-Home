@@ -52,7 +52,7 @@ const room = document.querySelectorAll('.card-divisao');
 
 function seeRandom() {
     let oneIsPlaying = 0;
-    let chance = Math.floor(Math.random() * );
+    let chance = Math.floor(Math.random() * 6);
     for (let i = 0; i < room.length; i += 2) {
         if (!room[i].classList.contains("hidden")) {
             oneIsPlaying = 1;
@@ -94,20 +94,18 @@ function seeRandom() {
         }
     }
 }
-
 setInterval(seeRandom, 1000);
 
 for (let i = 0; i < room.length; i += 2) {
     const video = room[i].querySelector("video");
 
     if (video) {
-        const videoIndex = i;
-        const imageIndex = i + 1;
+        const qualVideo = i;
+        const qualImage = i + 1;
 
         video.addEventListener("ended", () => {
-            room[videoIndex].classList.add("hidden");
-            room[imageIndex].classList.remove("hidden");
+            room[qualVideo].classList.add("hidden");
+            room[qualImage].classList.remove("hidden");
         });
     }
 }
-

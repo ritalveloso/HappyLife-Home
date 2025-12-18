@@ -10,11 +10,9 @@
     background-color: #FFF5EC;
     padding: 20px;
     border-radius: 15px;
-
     height: fit-content;
     text-align: left;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
     position: relative;
     z-index: 1;
 }
@@ -26,12 +24,15 @@
 }
 
 .setas {
+    background-color: #FFF5EC90;
+    padding: 10px;
+    border-radius: 10px;
+
     position: fixed;
     bottom: 70px;
     left: 50%;
     transform: translateX(-70%);
     z-index: 9999;
-
     margin: 20px;
     width: fit-content;
     display: flex;
@@ -43,51 +44,28 @@
 .seta {
     width: 32px;
     height: auto;
+    filter: invert();
 }
 
-/* O contentor que cobre o ecrã todo */
 #overlay-susto {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 99999; /* Fica à frente de tudo, até do header fixo */
+    z-index: 99999;
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none; /* O utilizador não consegue clicar nele */
+    pointer-events: none;
 }
 
-/* A imagem em si */
 #overlay-susto img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cobre o ecrã sem distorcer (corta se necessário) */
+    object-fit: cover;
 }
 
-/* Classe para esconder (usada no Javascript) */
 .escondido {
     display: none !important;
-}
-
-/* (Opcional) Animação para aparecer a tremer */
-@keyframes tremer {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-/* Adiciona esta classe no JS se quiseres que a imagem trema */
-.tremer-imagem img {
-    animation: tremer 0.5s;
-    animation-iteration-count: infinite;
 }

@@ -48,27 +48,20 @@ const paginasHistoria = [
 
 let indiceAtual = 0;
 
-// Elementos do HTML
 const textoElemento = document.getElementById("texto");
 const contadorElemento = document.getElementById("conta-paginas");
 const btnVoltar = document.getElementById("voltar");
 const btnAvancar = document.getElementById("avancar");
-
-// NOVO: Elemento do susto
 const overlaySusto = document.getElementById("overlay-susto");
-
-// NOVO: Configurações do Susto
-const PROBABILIDADE_SUSTO = 0.4; // 15% de probabilidade
-const TEMPO_DURACAO = 1000;       // 1 segundo
+const PROBABILIDADE_SUSTO = 0.4;
+const TEMPO_DURACAO = 1000;
 
 
-// --- 2. FUNÇÕES ---
 
 function atualizarEcra() {
     textoElemento.innerText = paginasHistoria[indiceAtual];
     contadorElemento.innerText = (indiceAtual + 1) + "/" + paginasHistoria.length;
 
-    // Lógica dos botões transparentes
     if (indiceAtual === 0) {
         btnVoltar.style.opacity = "0.3";
         btnVoltar.style.pointerEvents = "none";
@@ -86,44 +79,30 @@ function atualizarEcra() {
     }
 }
 
-// NOVO: Função que decide se mostra o susto ou não
 function tentarGerarSusto() {
-    // Sorteia um número entre 0 e 1
     const sorteio = Math.random();
 
-    // Se o número for menor que 0.15 (15%), mostra o susto
     if (sorteio < PROBABILIDADE_SUSTO) {
         overlaySusto.classList.remove("escondido"); // Mostra a imagem
-
-        // Esconde outra vez passados 1000ms (1 segundo)
         setTimeout(() => {
             overlaySusto.classList.add("escondido");
         }, TEMPO_DURACAO);
     }
 }
 
-
-// --- 3. EVENT LISTENERS (CLIQUES) ---
-
-// Botão Avançar
 btnAvancar.addEventListener("click", () => {
     if (indiceAtual < paginasHistoria.length - 1) {
         indiceAtual++;
         atualizarEcra();
-
-        // NOVO: Tenta dar o susto sempre que avanças
         tentarGerarSusto();
     }
 });
 
-// Botão Voltar
 btnVoltar.addEventListener("click", () => {
     if (indiceAtual > 0) {
         indiceAtual--;
         atualizarEcra();
-        // Nota: Geralmente não pomos sustos a voltar para trás, mas podes pôr se quiseres!
     }
 });
 
-// Iniciar a página
 atualizarEcra();

@@ -6,9 +6,7 @@ const inputsCor = document.querySelectorAll('input[name="cor-video"]');
 const totalImagens = imagens.length;
 let indiceAtual = 0;
 const tituloDivisaoElemento = document.getElementById('titulo-divisao');
-const nomesDivisoes = [
-    "Bedroom", "Kitchen", "Bathroom", "Kids' Bedroom", "Living Room", "Nursery"
-];
+const nomesDivisoes = ["Bedroom", "Kitchen", "Bathroom", "Kids' Bedroom", "Living Room", "Nursery"];
 let estadosLuzes = new Array(totalImagens).fill(true);
 let estadosCores = new Array(totalImagens).fill('original');
 function atualizarCarrossel() {
